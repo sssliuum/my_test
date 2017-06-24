@@ -1,0 +1,262 @@
+lab
+
+Beginnings:
+
+Calculate the BMI of a person using the formula BMI = ( Weight in Pounds / ( ( Height in inches ) x ( Height in inches ) ) ) x 703 and assign the value to the variable  bmi. Assume the value of the weight in pounds has already been assigned to the variable  w and the value of the height in inches has been assigned to the variable  h. Take care to use floating-point division.
+
+bmi=(w/(h*h))*703
+
+your code:
+float bmi=0.0
+bmi=w/((h*2)703)
+
+Contral:
+
+Given the variables  x, y, and z, each associated with an int, write a fragment of code that assigns the smallest of these to min.
+
+min = 1000000
+if min > x:
+	min = x
+if min > y:
+	min = y
+if min > z:
+	min = z
+
+
+you code:
+if (x<y and x<z):
+	min=x
+elif (y<x and y<z):
+	min=y
+elif (z<x and z<y):
+	min=z
+	
+
+String:
+
+Write an expression whose value is True if all the letters in the str associated with s are all lower case. 
+s.islower()
+
+
+
+functions:
+
+1) Write the definition of a function twice, that receives an int parameter and returns an int that is twice the value of the parameter. 
+
+
+def twice(a):
+	return 2 * a
+	
+2) Given print_larger, a function that expects two parameters and returns no value and given two variables , sales1 and sales2, that have already been defined, write a statement that calls print_larger, passing it sales1 and sales2. 
+
+print_larger(sales1, sales2)
+
+
+3)Write a function min that has three str parameters and returns the smallest. (Smallest in the sense of coming first alphabetically, not in the sense of "shortest".) 
+
+def min( a_str, b_str, c_str):
+	if a_str < b_str:
+		min_str = a_str
+	else:
+		min_str = b_str
+	
+	if c_str < min_str:
+		min_str = c_str
+	
+	return min_str
+	
+	
+	
+4) Assume the availability of a function is_prime. Assume a variable  n has been associated with positive integer. Write the statements needed to find out how many prime numbers (starting with 2 and going in increasing order with successively higher primes [2,3,5,7,11,13,...]) can be added before exceeding n. Associate this number with the variable  k. 
+
+
+
+
+5) max is a function that expects two int parameters and returns the value of the larger one. 
+
+Two variables , population1 and population2, have already been defined and associated with int values. 
+
+Write an expression (not a statement!) whose value is the larger of population1 and population2 by calling max. 
+
+max(population1, population2)
+
+
+
+6) Assume that max2 is a function that expects two int parameters and returns the value of the larger one. 
+
+Also assume that four variables , population1, population2, population3, and population4 have already been defined and associated with int values. 
+
+Write an expression (not a statement!) whose value is the largest of population1, population2, population3, and population4 by calling max2. 
+
+max2(max2(population1, population2), max2(population3, population4))
+
+
+
+
+
+your code:
+some_num = 17
+if is_prime(some_num):
+	print(n, "is prime")
+else:
+	print(k, "isn't prime")
+
+
+	
+List and Tuples:
+
+2)Given that play_list has been defined to be a list, write an expression that evaluates to a new list containing the elements at index 0 through index 4 play_list. Do not modify play_list.  
+	
+play_list[0:5]
+
+
+3) Given that plist1 and plist2 both refer to lists, write a statement that defines plist3 as a new list that is the concatenation of plist1 and plist2. Do not modify plist1 or plist2. 
+
+plist3 =   plist1 + plist2
+
+
+4)Given: 
+• a variable  current_members that refers to a list, and
+• a variable  member_id that has been defined.
+
+Write some code that assigns True to a variable  is_a_member if the value associated with member_id can be found in the list associated with current_members, but that otherwise assigns False to is_a_member. Use only current_members, member_id, and is_a_member. 
+
+if member_id in current_members:
+	 is_a_member  = True
+else:
+	 is_a_member = False
+
+	 
+	 
+	 
+5)
+
+
+
+
+
+
+
+	 
+	
+6) Given a variable  temps that refers to a list, all of whose elements refer to values of type float, representing temperature data, compute the average temperature and assign it to a variable  named avg_temp. Besides temps and avg_temp, you may use two other variables  -- k and total. 	
+	
+avg_temp = sum(temps) / len(temps)
+
+
+7) A list named parking_tickets has been defined to be the number of parking tickets given out by the city police each day since the beginning of the current year. (Thus, the first element of the list contains the number of tickets given on January 1; the last element contains the number of tickets given today.) 
+
+ Write some code that associates most_tickets with the largest value found in parking_tickets. You may, if you wish, use one additional variable , k. 
+
+most_tickets = max(parking_tickets)
+
+
+8) Assume that plist has been defined and is associated with a non-empty list. Write a statement that increases the first element of this list by 10. 
+
+
+plist[0] = plist[0] + 10
+
+
+
+9)
+
+
+Dictionaries and Sets
+1)
+Create a dictionary that maps the first n counting numbers to their squares. Associate the dictionary with the variable  squares. 
+
+squares=dict((n,n**2) for n in range(1,n+1) )
+
+
+2)
+Given a dictionary d and a list lst, remove all elements from the dictionary whose key is an element of lst. Any elements from the list that are NOT keys of the dictionary should be added to a new set associated with the variable  not_found. For example, given the dictionary {1:2, 3:4, 5:6, 7:8} and the list [1, 6, 7], the resulting dictionary would be {3:4, 5:6} and the set not_found would contain 6. 
+
+not_found = set()
+for key in lst:
+    if key in d:
+        del d[key]
+    else:
+        not_found.add(key)
+
+print(not_found)
+print(d)
+
+3)
+
+
+
+
+
+Class
+1)
+Write the definition of a class Counter containing: •An instance variable  counter of type int, initialized to 0. 
+•A method called increment that adds one to the instance variable  counter. It does not accept parameters or return a value. 
+•A method called get_value that doesn't accept any parameters. It returns the value of the instance variable  counter. 
+
+class Counter(object):
+	
+	def __init__(self, counter=0):
+		
+		self.counter = counter
+	
+	def increment(self):
+		
+		self.counter += 1
+		
+	def get_value(self):	
+		return self.counter
+		
+		
+2)
+Write the definition of a class Counter containing: •An instance variable  named counter of type int 
+•An instance variable  named limit of type int. 
+•A constructor that takes two int arguments and assigns the first one to counter and the second one to limit 
+•A method named increment. It does not take parameters or return a value; if the instance variable  counter is less than limit, increment just adds one to the instance variable  counter. 
+•A method named decrement. It also does not take parameters or return a value; if counter is greater than zero, it just subtracts one from the counter. 
+•A method named get_value that returns the value of the instance variable  counter. 
+		
+		
+class Counter(object):
+	
+	def __init__(self, counter, limit):
+		
+		self.counter = counter
+		self.limit = limit
+	
+	def increment(self):
+		
+		if self.counter < self.limit:
+			self.counter += 1
+	def decrement(self):
+		if self.counter > 0:
+			self.counter -= 1
+		
+	def get_value(self):	
+		return self.counter
+
+
+3)
+Write the definition of a class Player containing: •An instance variable  name of type String, initialized to the empty String.
+•An instance variable  score of type int, initialized to zero.
+•A method called set_name that has one parameter, whose value it assigns to the instance variable  name.
+•A method called set_score that has one parameter, whose value it assigns to the instance variable  score.
+•A method called get_name that has no parameters and that returns the value of the instance variable  name.
+•A method called get_score that has no parameters and that returns the value of the instance variable  score.
+No constructor need be defined. 
+		
+
+		YOUR SUBMISSION
+class Player(object):
+    def __init__(self, name='', score=0):
+        self.name = name
+        self.score = score        
+    def set_name(self, name ):
+        self.name = name
+    def set_score(self, score):
+        self.score = score
+    def get_name(self):
+        return self.name
+    def get_score(self):
+        return self.score
+
+
